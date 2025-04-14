@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Smooth scrolling and transitions */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+  @apply antialiased text-gray-800 bg-gray-50;
+}
+
+/* Responsive text sizes */
+h1 {
+  @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+}
+
+h2 {
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+}
+
+p {
+  @apply text-base sm:text-lg leading-relaxed;
+}
+
+/* Interactive elements */
+button, a {
+  @apply transition-all duration-200;
+}
+
+/* Focus styles */
+:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Custom utilities */
+.card {
+  @apply bg-white rounded-lg shadow-md p-4 sm:p-6;
+}
+
+.card-hover {
+  @apply hover:shadow-lg transition-shadow duration-200;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F8F8F8;
+}
