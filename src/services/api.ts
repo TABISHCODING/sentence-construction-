@@ -102,6 +102,6 @@ export class ApiService {
    * Gets the default timeout duration for questions (in seconds)
    */
   public static getDefaultQuestionTimeout(): number {
-    return 90; // Increased from 30 to 90 seconds to give users more time
+    return 30; // Keep the original 30 seconds timer
   }
 }
