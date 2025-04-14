@@ -29,6 +29,19 @@ export interface TestResult {
 }
 
 /**
+ * Activity interface - represents an activity
+ */
+export interface Activity {
+  id: string;
+  userId: string;
+  type: string;
+  coinType: string;
+  coins: number;
+  description: string;
+  createdAt: string;
+}
+
+/**
  * APIResponse interface - represents the response from the server
  */
 export interface ApiResponse {
@@ -38,4 +51,5 @@ export interface ApiResponse {
     questions: Question[];
   };
   message: string;
+  activity: Activity;
 }

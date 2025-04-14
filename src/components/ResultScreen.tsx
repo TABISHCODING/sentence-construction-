@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Question, UserAnswer } from '../types';
-import { parseQuestionText } from '../utils/utility';
+import { parseQuestionText } from '../utils/helpers';
 
 interface ResultScreenProps {
   questions: Question[];
@@ -72,7 +72,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ questions, userAnswe
           </p>
 
           <div className="flex justify-center space-x-4">
-            <Link
+            <Link 
               to="/"
               className="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
             >
@@ -88,8 +88,8 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ questions, userAnswe
             const parts = parseQuestionText(question.question);
 
             return (
-              <div
-                key={question.questionId}
+              <div 
+                key={question.questionId} 
                 className="bg-gray-50 rounded p-4"
               >
                 <div className="flex items-start justify-between mb-2">
@@ -103,7 +103,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ questions, userAnswe
 
                 {/* Correct Answer */}
                 <div className="text-sm text-gray-600 mb-2">
-                  {parts.map((part: string, idx: number) => (
+                  {parts.map((part, idx) => (
                     <React.Fragment key={idx}>
                       {part}
                       {idx < parts.length - 1 && (
@@ -120,7 +120,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ questions, userAnswe
                   <div className="mt-2 pt-2 border-t border-gray-200">
                     <div className="text-xs text-gray-400 mb-1">Your response:</div>
                     <div className="text-sm text-gray-600">
-                      {parts.map((part: string, idx: number) => (
+                      {parts.map((part, idx) => (
                         <React.Fragment key={idx}>
                           {part}
                           {idx < parts.length - 1 && (

@@ -4,7 +4,7 @@ import { Question, UserAnswer } from '../types';
 import { Layout } from './Layout';
 import { ProgressBar } from './ProgressBar';
 import { Timer } from './Timer';
-import { parseQuestionText } from '../utils/utility';
+import { parseQuestionText } from '../utils/helpers';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ApiService } from '../services/api';
 
@@ -225,7 +225,7 @@ export const TestScreen: React.FC<TestScreenProps> = ({ questions, onComplete, o
               Select the missing words in the correct order
             </div>
 
-            {parseQuestionText(currentQuestion.question).map((part: string, index: number) => (
+            {parseQuestionText(currentQuestion.question).map((part, index) => (
               <React.Fragment key={index}>
                 {part}
                 {index < parseQuestionText(currentQuestion.question).length - 1 && (

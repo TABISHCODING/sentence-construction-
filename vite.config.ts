@@ -9,9 +9,9 @@ export default defineConfig({
     port: 5176,
     proxy: {
       '/api': {
-        target: 'http://localhost:8888/.netlify/functions',
+        target: 'http://localhost:9999/.netlify/functions',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
     },
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatTime } from '../utils/utility';
+import { formatTime } from '../utils/helpers';
 
 /**
  * Props for the Timer component
