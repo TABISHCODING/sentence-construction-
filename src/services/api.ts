@@ -22,8 +22,8 @@ export class ApiService {
     // In development, use the local API endpoint
     const isDev = import.meta.env.DEV;
     const apiUrl = isDev
-      ? '/api'  // This will be proxied to /.netlify/functions/api
-      : import.meta.env.VITE_API_URL || 'https://tabishapi.netlify.app/.netlify/functions/api';
+      ? '/api-v2'  // This will be proxied to /.netlify/functions/api-v2
+      : import.meta.env.VITE_API_URL || 'https://tabishapi.netlify.app/.netlify/functions/api-v2';
 
     // Remove trailing slash if present
     this.baseUrl = apiUrl.endsWith('/') ? apiUrl.slice(0, -1) : apiUrl;
